@@ -17,18 +17,18 @@ $("#currentDay").append(currentTime);
 
 // logic for color changing
 
+
 function hourUpdater() {
     // get current number of hours
     var currentHour = moment().hours();
-
     // loop over time blocks
     $('.time-block').each(function() {
       var blockHour = parseInt(
         $(this)
           .attr('id')
-          .split('-')[1]
+ 
       );
-
+      
       // check if we've moved past this time
       if (blockHour < currentHour) {
         $(this).addClass('past');
@@ -42,20 +42,23 @@ function hourUpdater() {
       }
     });
   }
-  var interval = setInterval(hourUpdater, 15000);
+
   hourUpdater();
+
+  // set up interval to check if current time needs to be updated
+  var interval = setInterval(hourUpdater, 15000);
 
 
 // loads data from local storage
-$("#9AM .description").val(localStorage.getItem('9AM'));
-$("#10AM .description").val(localStorage.getItem('10AM'));
-$("#11AM .description").val(localStorage.getItem('11AM'));
-$("#12PM .description").val(localStorage.getItem('12PM'));
-$("#1PM .description").val(localStorage.getItem('1PM'));
-$("#2PM .description").val(localStorage.getItem('2PM'));
-$("#3PM .description").val(localStorage.getItem('3PM'));
-$("#4PM .description").val(localStorage.getItem('4PM'));
-$("#5PM .description").val(localStorage.getItem('5PM'));
+$("#09 .description").val(localStorage.getItem('09'));
+$("#10 .description").val(localStorage.getItem('10'));
+$("#11 .description").val(localStorage.getItem('11'));
+$("#12 .description").val(localStorage.getItem('12'));
+$("#13 .description").val(localStorage.getItem('13'));
+$("#14 .description").val(localStorage.getItem('14'));
+$("#15 .description").val(localStorage.getItem('15'));
+$("#16 .description").val(localStorage.getItem('16'));
+$("#17 .description").val(localStorage.getItem('17'));
 
 
 });
