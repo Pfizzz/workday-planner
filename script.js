@@ -19,17 +19,15 @@ $("#currentDay").append(currentTime);
 
 
 function hourUpdater() {
-    // get current number of hours
+
     var currentHour = moment().hours();
-    // loop over time blocks
     $('.time-block').each(function() {
       var blockHour = parseInt(
         $(this)
           .attr('id')
  
       );
-      
-      // check if we've moved past this time
+
       if (blockHour < currentHour) {
         $(this).addClass('past');
       } else if (blockHour === currentHour) {
